@@ -7,7 +7,7 @@ cp Ubuntu_Setup/.vimrc ~/
 cp Ubuntu_Setup/.zshrc ~/
 rm -rf Ubuntu_Setup
 cd ~
-if [[ -d ~/.vim/bundle ]] 
+if [ -d ~/.vim/bundle ]
 then
 	cd ~/.oh-my-zsh/custom/themes/powerlevel9k
 	git pull
