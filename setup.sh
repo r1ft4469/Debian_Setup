@@ -18,3 +18,8 @@ git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 git config --global core.pager cat
 cd ~
 powerline-config tmux setup
+git clone https://github.com/r1ft4469/Ubuntu_Setup
+cp Ubuntu_Setup/.tmux.conf ~/
+cp Ubuntu_Setup/.vimrc ~/
+cp Ubuntu_Setup/.zshrc ~/
+rm -rf Ubuntu_Setup
