@@ -1,6 +1,11 @@
 #!/bin/bash
-apt upgrade
-apt install vim-nox git tmux zsh python3-pip ruby
+cd /tmp
+git clone https://github.com/r1ft4469/Ubuntu_Setup
+cp Ubuntu_Setup/.tmux.conf ~/
+cp Ubuntu_Setup/.vimrc ~/
+cp Ubuntu_Setup/.zshrc ~/
+rm -rf Ubuntu_Setup
+cd ~
 ssh-keygen -t rsa -b 4098
 pip3 install powerline-status
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -18,8 +23,3 @@ git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 git config --global core.pager cat
 cd ~
 powerline-config tmux setup
-git clone https://github.com/r1ft4469/Ubuntu_Setup
-cp Ubuntu_Setup/.tmux.conf ~/
-cp Ubuntu_Setup/.vimrc ~/
-cp Ubuntu_Setup/.zshrc ~/
-rm -rf Ubuntu_Setup

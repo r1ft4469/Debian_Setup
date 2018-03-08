@@ -1,3 +1,4 @@
 sudo apt update && \
-sudo apt install curl %% \
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
+sudo apt upgrade && \
+sudo apt install curl vim-nox git tmux zsh python3-pip ruby && \
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
