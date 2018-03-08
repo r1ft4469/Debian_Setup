@@ -6,7 +6,6 @@ cp Ubuntu_Setup/.vimrc ~/
 cp Ubuntu_Setup/.zshrc ~/
 rm -rf Ubuntu_Setup
 cd ~
-ssh-keygen -t rsa -b 4098
 pip3 install powerline-status
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
