@@ -42,3 +42,5 @@ function md5check() {
   md5sum "$1" | grep "$2";
 }
 
+# ls
+alias ls='ls --color -la'
