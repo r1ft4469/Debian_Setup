@@ -48,5 +48,5 @@ alias ls='ls --color -la'
 # update
 function r1ft_update() {
 	sudo apt update
-	sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
 }
