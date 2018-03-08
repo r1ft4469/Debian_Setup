@@ -1,4 +1,5 @@
-```ssh-keygen -t rsa -b 4098 && \
+```
+ssh-keygen -t rsa -b 4098 && \
 sudo apt update && \
 sudo apt upgrade && \
 sudo apt install curl vim-nox git tmux zsh python3-pip ruby && \
