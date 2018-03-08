@@ -2,10 +2,10 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd /tmp
 git clone https://github.com/r1ft4469/Debian_Setup
-cp Ubuntu_Setup/.tmux.conf ~/
-cp Ubuntu_Setup/.vimrc ~/
-cp Ubuntu_Setup/.zshrc ~/
-rm -rf Ubuntu_Setup
+cp /tmp/Ubuntu_Setup/.tmux.conf ~/
+cp /tmp/Ubuntu_Setup/.vimrc ~/
+cp /tmp/Ubuntu_Setup/.zshrc ~/
+rm -rf /tmp/Ubuntu_Setup
 cd ~
 if [ -d ~/.vim/bundle ]
 then
