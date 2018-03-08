@@ -1,4 +1,5 @@
 #!/bin/bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd /tmp
 git clone https://github.com/r1ft4469/Ubuntu_Setup
 cp Ubuntu_Setup/.tmux.conf ~/
@@ -8,7 +9,6 @@ rm -rf Ubuntu_Setup
 cd ~
 pip3 install powerline-status
 sudo pip3 install powerline-status
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 mkdir ~/.tmux
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
