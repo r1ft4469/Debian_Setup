@@ -1,6 +1,7 @@
 #!/bin/bash
 apt update
-apt install vim-nox git tmux zsh python3-pip ruby curl
+apt upgrade
+apt install vim-nox git tmux zsh python3-pip ruby
 pip3 install powerline-status
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
