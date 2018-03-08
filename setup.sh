@@ -7,7 +7,8 @@ cp Ubuntu_Setup/.vimrc ~/
 cp Ubuntu_Setup/.zshrc ~/
 rm -rf Ubuntu_Setup
 cd ~
-if [[ -d ~/.vim/bundle ]] then
+if [[ -d ~/.vim/bundle ]] 
+then
 	cd ~/.oh-my-zsh/custom/themes/powerlevel9k
 	git pull
 	cd ~/.vim/bundle/supertab
@@ -23,7 +24,8 @@ if [[ -d ~/.vim/bundle ]] then
 	cd ~/.vim/bundle/vim-snippets
 	git pull
 fi
-if [[ ! -d ~/.vim/bundle ]] then
+if [[ ! -d ~/.vim/bundle ]]
+then
 	pip3 install powerline-status
 	sudo pip3 install powerline-status
 	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
