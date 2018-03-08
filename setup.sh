@@ -22,4 +22,4 @@ git clone https://github.com/honza/vim-snippets.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 git config --global core.pager cat
 cd ~
-pip3 install powerline-status
+
