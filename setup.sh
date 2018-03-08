@@ -22,7 +22,8 @@ if [[ -d ~/.vim/bundle ]]
 	git pull
 	cd ~/.vim/bundle/vim-snippets
 	git pull
-else
+fi
+if [[ ! -d ~/.vim/bundle ]]
 	pip3 install powerline-status
 	sudo pip3 install powerline-status
 	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
