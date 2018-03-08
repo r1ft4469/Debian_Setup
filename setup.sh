@@ -7,6 +7,7 @@ cp Ubuntu_Setup/.zshrc ~/
 rm -rf Ubuntu_Setup
 cd ~
 pip3 install powerline-status
+sudo pip3 install powerline-status
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 mkdir ~/.tmux
@@ -21,4 +22,4 @@ git clone https://github.com/honza/vim-snippets.git
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 git config --global core.pager cat
 cd ~
-powerline-config tmux setup
+pip3 install powerline-status
