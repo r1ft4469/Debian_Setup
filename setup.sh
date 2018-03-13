@@ -29,7 +29,7 @@ else
 	pip3 install powerline-status
 	sudo pip3 install powerline-status
 	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-	mkdir ~/.tmux/mouse
+	mkdir -p ~/.tmux/mouse
 	git clone https://github.com/nhdaly/tmux-better-mouse-mode ~/.tmux/mouse
 	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
