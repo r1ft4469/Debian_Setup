@@ -5,7 +5,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 export EDITOR="vim"
 export TERM="xterm-256color"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git tmux python3 ruby sudo)
+plugins=(git tmux python3 ruby sudo zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs battery time)
@@ -51,5 +51,3 @@ function r1ft_update() {
 	sudo apt upgrade
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
 }
-
-plugins=( [plugins...] zsh-syntax-highlighting)
