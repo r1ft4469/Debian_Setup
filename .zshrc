@@ -9,14 +9,14 @@ POWERLEVEL9k_MODE='awsome-fontconfig'
 export ZSH=/home/r1ft/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 export EDITOR="vim"
-export TERM="xterm-256color"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git tmux python3 ruby sudo zsh-syntax-highlightin)
+plugins=(git tmux python3 ruby sudo zsh-syntax-highlightin zsh-dircolors-solarized)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs battery time)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
-POWERLEVEL9K_IP_BACKGROUND='green'
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs_joined time)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_STATUS_CROSS="true"
 DISALBE_AUTO_TITLE="true"
 
 
