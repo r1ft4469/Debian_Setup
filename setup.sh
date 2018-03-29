@@ -11,8 +11,7 @@ chmod +x ~/.tmux/tmux_split_pane.sh
 cp -r Debian_Setup/.config ~/
 rm -rf Debain_Setup
 cd ~
-if [ -d ~/.vim/bundle ]
-then
+if [ -d ~/.vim/bundle ]; then
 	cd ~/.tmux
 	git pull
 	cd ~/.oh-my-zsh/custom/themes/powerlevel9k
@@ -47,7 +46,5 @@ else
 	git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	git config --global core.pager cat
-	if "test ! -d ~/.tmux/plugins/tpm" \
-	   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 	cd ~
 fi
