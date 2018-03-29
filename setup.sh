@@ -7,6 +7,7 @@ cp Debian_Setup/.tmux.conf ~/
 cp Debian_Setup/.vimrc ~/
 cp Debian_Setup/.zshrc ~/
 cp Debian_Setup/tmux_split_pane.sh ~/.tmux/
+chmod +x ~/.tmux/tmux_split_pane.sh
 rm -rf Debain_Setup
 cd ~
 if [ -d ~/.vim/bundle ]
