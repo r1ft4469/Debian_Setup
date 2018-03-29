@@ -1,3 +1,9 @@
+# Path
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+export POWERLINE_COMMAND=powerline
+
 # Oh-My-Zsh
 POWERLEVEL9k_MODE='awsome-fontconfig'
 export ZSH=/home/r1ft/.oh-my-zsh
@@ -5,7 +11,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 export EDITOR="vim"
 export TERM="xterm-256color"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git tmux python3 ruby sudo zsh-syntax-highlighting)
+plugins=(git tmux python3 ruby sudo zsh-syntax-highlightin)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs battery time)
@@ -51,3 +57,7 @@ function r1ft_update() {
 	sudo apt upgrade
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
 }
+
+# Tmux Start
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
