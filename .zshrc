@@ -51,3 +51,5 @@ function r1ft_update() {
 	sudo apt upgrade
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/r1ft4469/Ubuntu_Setup/master/setup.sh)"
 }
+
+plugins=( [plugins...] zsh-syntax-highlighting)
