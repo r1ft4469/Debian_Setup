@@ -32,6 +32,8 @@ map <silent> <C-o> :call ToggleNetrw()<CR>
 
 " Color Scheme
 let g:solarized_termcolors=16
+" let g:solarized_contrast="high"
+let g:solarized_termtrans=1
 colorscheme solarized
 filetype plugin indent on
 
