@@ -23,12 +23,14 @@ set autochdir
 set laststatus=2
 set guifont=Inconsolata\ for\ Powerline:h14
 set noshowmode
-
+set mouse=a
 
 " Binds
 nnoremap <F1> :bn<CR>
 nnoremap <F2> :bN<CR>
 map <silent> <C-o> :call ToggleNetrw()<CR>
+cnoreabbrev <expr> w! ((getcmdtype() is# ':' && getcmdline() is# 'w!')?('w !sudo tee %'):('w!'))
+
 
 " Color Scheme
 let g:solarized_termcolors=16
