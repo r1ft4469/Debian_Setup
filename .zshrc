@@ -56,6 +56,7 @@ function md5check() {
 }
 
 # ls
+eval `dircolors ~/.dircolors`
 alias ls='ls --color -l'
 
 # copy to system

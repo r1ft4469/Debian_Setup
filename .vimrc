@@ -67,6 +67,7 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 set guioptions-=T
 set noshowmode
 set mouse=a
+syntax on
 set lines=65 columns=135
 filetype plugin on
 set tags=./tags;,tags;$HOME
