@@ -1,6 +1,47 @@
-" Pathogen
-execute pathogen#infect()
-syntax enable
+" Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+" Plungins
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'xolox/vim-misc'
+" Plugin 'Valloric/YouCompleteMe'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " Settings
 set background=dark
@@ -11,26 +52,48 @@ set complete-=i
 set smarttab
 set ruler
 set wildmenu
+set wildmode=longest:list,full
 set showtabline=2
 set laststatus=2
-set tabstop=4 
-set expandtab 
-set softtabstop=4 
-set shiftwidth=4
+set tabstop=8 
+set noexpandtab 
+set softtabstop=8
+set shiftwidth=8
 set hidden
 set nocompatible
 set autochdir
 set laststatus=2
-set guifont=Inconsolata\ for\ Powerline:h14
+set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11 
+set guioptions-=T
 set noshowmode
 set mouse=a
+set lines=65 columns=135
+filetype plugin on
+set tags=./tags;,tags;$HOME
+"let Tlist_Use_Horiz_Window = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Auto_Open = 0
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Compact_Format = 0
 
 " Binds
-nnoremap <F1> :bn<CR>
-nnoremap <F2> :bN<CR>
-map <silent> <C-o> :call ToggleNetrw()<CR>
-cnoreabbrev <expr> w! ((getcmdtype() is# ':' && getcmdline() is# 'w!')?('w !sudo tee %'):('w!'))
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:ctrlp_map = '<D-o>'
+nnoremap <silent> <D-t> :TlistToggle<CR>
+nnoremap <silent> <D-r> :TlistAddFilesRecursive ./ *<CR>
 
+
+" nerdTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+"autocmd vimenter * silent! lcd %:p:h
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"let g:DevIconsEnableFoldersOpenClose = 1
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+			\ exe "normal g'\"" | endif  
+autocmd VimEnter * wincmd p
 
 " Color Scheme
 let g:solarized_termcolors=16
@@ -39,39 +102,8 @@ let g:solarized_termtrans=1
 colorscheme solarized
 filetype plugin indent on
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" Netrw
-let g:NetrwIsOpen=0
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
-endfunction
-let g:netrw_liststyle=3
-let g:netrw_winsize=20
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-
 " Powerline
-set rtp+=/Users/raguay/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 let g:minBufExplForceSyntaxEnable = 1
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
 if ! has('gui_running')
     set ttimeoutlen=10
     augroup FastEscape
@@ -80,14 +112,4 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
