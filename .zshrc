@@ -6,7 +6,7 @@ export POWERLINE_COMMAND=powerline
 
 # Oh-My-Zsh
 POWERLEVEL9K_MODE="nerdfont-fontconfig"
-export ZSH=/root/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 export EDITOR="vim"
 ZSH_TMUX_AUTOSTART='true'
