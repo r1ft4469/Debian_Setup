@@ -9,6 +9,7 @@ cp Debian_Setup/.zshrc ~/
 cp Debian_Setup/tmux_split_pane.sh ~/.tmux/
 chmod +x ~/.tmux/tmux_split_pane.sh
 cp -r Debian_Setup/.config ~/
+cp -r Debian_Setup/.dircolors ~/
 rm -rf Debain_Setup
 cd ~
 if [ -d ~/.vim/bundle ]; then
